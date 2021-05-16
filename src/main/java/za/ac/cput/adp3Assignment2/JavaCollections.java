@@ -75,8 +75,6 @@ public class JavaCollections {
         set.add(30);
         set.add(40);
         set.add(50);
-        set.add(60);
-        set.add(70);
 
         Iterator<Integer> iterator = set.iterator();
         System.out.println("\nSet added elements\n=========================");
