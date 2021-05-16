@@ -9,21 +9,24 @@ package za.ac.cput.adp3Assignment2;
 import org.junit.jupiter.api.Test;
 import java.util.*;
 import static org.junit.jupiter.api.Assertions.*;
+import org.hamcrest.collection.IsMapContaining;
+import org.hamcrest.CoreMatchers;
+import static org.hamcrest.MatcherAssert.assertThat;
 
 class JavaCollectionsTest
 {
     @Test
     public void implementCollection(){
         Map<String, String> map = new HashMap<>();
-        map.put("Alu","5");
-        map.put("Wenzo", "3");
-        map.put("Tumelo", "13");
+        map.put("2016","Alu");
+        map.put("2019", "Tumelo");
+        map.put("2015", "Wenzo");
 
-        assertEquals("[Tumelo, Alu, Wenzo]", map.keySet().toString());
+        assertEquals("[2019, 2016, 2015]", map.keySet().toString());
 
-        map.remove("Alu");
-        assertEquals("[Tumelo, Wenzo]", map.keySet().toString());
-        //assertT(map, IsMapContaining.hasEntry("Wenzo","3"));
+        map.remove("2016");
+        assertEquals("[2019, 2015]", map.keySet().toString());
+        assertThat(map, IsMapContaining.hasEntry("2019","Tumelo"));
     }
 
     @Test
@@ -43,7 +46,7 @@ class JavaCollectionsTest
         assertEquals("[0, 1, 2, 3, 4]", treeMap.keySet().toString());
 
         //Test Find
-        //assertThat(treeMap, IsMapContaining.hasEntry(3,"Sindi"));
+        assertThat(treeMap, IsMapContaining.hasEntry(3,"Sindi"));
     }
 
     @Test
@@ -62,7 +65,7 @@ class JavaCollectionsTest
         assertEquals("[50, 20, 40, 30]", set.toString());
 
         //Test Find
-        //assertThat(set, CoreMatchers.hasItem(20));
+        assertThat(set, CoreMatchers.hasItem(20));
     }
 
     @Test
@@ -78,7 +81,7 @@ class JavaCollectionsTest
         assertEquals("[Book A, Book B, Book C, Book D]", linkedList.toString());
         linkedList.remove("Book B");
         assertEquals("[Book A, Book C, Book D]", linkedList.toString());
-        //assertThat(linkedList, CoreMatchers.hasItem("Book A") );
+        assertThat(linkedList, CoreMatchers.hasItem("Book A") );
     }
 
 }

@@ -14,25 +14,24 @@ public class JavaCollections {
     {
         //Map<String, String> map = new HashMap<>();
         Map map = new HashMap();
-        map.put("Alu","5");
-        map.put("Wenzo", "3");
-        map.put("Tumelo", "13");
+        map.put("2016","Alu");
+        map.put("2019", "Tumelo");
+        map.put("2015", "Wenzo");
 
-        System.out.println("\nMap added elements\n=================================================");
+        System.out.println("\nCollection added elements\n========================================");
         System.out.println(map);
 
         System.out.println("--------------After Remove-----------");
-        map.remove("Wenzo");
+        map.remove("2015");
         System.out.println(map);
 
         System.out.println("-----------------Find--------------");
-        if(map.containsKey("Alu")) {
-            System.out.println("Key Found: " +map.containsKey("Alu") );
+        if(map.containsKey("2016")) {
+            System.out.println("Key Found: " + map.containsKey("2016") );
         } else {
             System.out.println("Key Not found");
         }
-
-    }
+     }
 
     //Method implements Map
     public void implementTreeMap()
@@ -45,26 +44,26 @@ public class JavaCollections {
         treemap.put(4, "Nangamso");
         treemap.put(5, "Aviwe");
 
-        System.out.println("\nTreeMap added elements\n=================");
+        System.out.println("\nMap added elements\n=========================");
         System.out.println("Key, Value");
         for (Map.Entry m: treemap.entrySet())
         {
-            System.out.println(m.getKey() + "," + m.getValue());
+            System.out.println(m.getKey() + " : " + m.getValue());
         }
-        treemap.remove(2);
+
         System.out.println("-------After Remove----------");
+        treemap.remove(2);
         for (Map.Entry m: treemap.entrySet())
         {
-            System.out.println(m.getKey() + "," + m.getValue());
+            System.out.println(m.getKey() + " : " + m.getValue());
         }
 
         System.out.println("-----------------Find--------------");
         if(treemap.containsKey(0)) {
-            System.out.println("Key Found: " +treemap.containsKey(0) );
+            System.out.println("Key Found: " + treemap.containsKey(0));
         } else {
             System.out.println("Key Not found");
         }
-
     }
 
     //Method implements Set
@@ -80,15 +79,15 @@ public class JavaCollections {
         set.add(70);
 
         Iterator<Integer> iterator = set.iterator();
-        System.out.println("\nHashMap added elements\n=========================");
+        System.out.println("\nSet added elements\n=========================");
         while(iterator.hasNext())
         {
             System.out.println(iterator.next());
         }
 
+        System.out.println("----------After Remove-------------");
         set.remove(60);
         Iterator<Integer> iterator2 = set.iterator();
-        System.out.println("---------After Remove-------------");
 
         while(iterator2.hasNext())
         {
@@ -97,12 +96,11 @@ public class JavaCollections {
 
         System.out.println("--------------Find-----------------");
         if(set.contains(50)){
-            System.out.println("Element Found: " + set.contains(500));
+            System.out.println("Element Found: " + set.contains(50));
 
         }else {
             System.out.println("Not Found");
         }
-
     }
 
     //Method implements List
@@ -116,7 +114,7 @@ public class JavaCollections {
 
         Iterator<String> iterator = linkedList.iterator();
         //transverse through the the list
-        System.out.println("\nLinkedList added element\n==================");
+        System.out.println("\nList added element\n======================");
         while (iterator.hasNext())
         {
             System.out.println(iterator.next());
@@ -130,9 +128,8 @@ public class JavaCollections {
         {
             System.out.println(iterator3.next());
         }
-
         System.out.println("---------------------Find-----------------------");
-        System.out.println("We Found: " + linkedList.getFirst() + " at index " + linkedList.indexOf(linkedList.getFirst()));
+        System.out.println("We Found: " + linkedList.get(1) + " at index " + linkedList.indexOf(linkedList.get(1)));
     }
 
     public static void main(String[] args) {
